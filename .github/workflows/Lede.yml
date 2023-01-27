@@ -73,7 +73,7 @@ on:
       UPDATE_FIRMWARE_ONLINE:
         description: '增加在线更新固件功能'
         required: false
-        default: 'false'
+        default: 'true'
         type: boolean
       COLLECTED_PACKAGES:
         description: '是否加入作者收集的插件包'
