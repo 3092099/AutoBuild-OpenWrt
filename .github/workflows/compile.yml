@@ -158,7 +158,8 @@ jobs:
       if: steps.compile.outcome == 'success' && env.UPLOAD_FIRMWARE == 'true'
       uses: actions/upload-artifact@main
       with:
-        name: OpenWrt-x64-GXNAS-${{ env.SOURCE }}-${{ env.LUCI_EDITION }}-${{ env.TARGET_PROFILE }}-firmware-${{ env.Firmware_Date }}
+        #name: ${{ env.SOURCE }}-${{ env.LUCI_EDITION }}-${{ env.TARGET_PROFILE }}-firmware-${{ env.Firmware_Date }}
+        name: OpenWrt-x64-GXNAS-${{ env.Firmware_Date }}
         path: ${{ env.FIRMWARE_PATH }}
 
     - name: 上传固件到「WeTransfer」
@@ -176,7 +177,8 @@ jobs:
       if: steps.compile.outcome == 'success' && env.UPLOAD_RELEASE == 'true' && env.REPO_TOKEN
       uses: ncipollo/release-action@main
       with:
-        name: OpenWrt-x64-GXNAS-${{ env.SOURCE }}-${{ env.PROMPT_TING }}
+        #name: ${{ env.SOURCE }}-${{ env.PROMPT_TING }}
+        name: OpenWrt-x64-GXNAS
         tag: OpenWrt-x64-GXNAS
         token: ${{ secrets.REPO_TOKEN }}
         allowUpdates: true
@@ -194,7 +196,8 @@ jobs:
         token: ${{ secrets.REPO_TOKEN }}
         allowUpdates: true
         body: ${{ env.Tongzhi_Date }}
-        artifacts: "${{ env.BIN_PATH }}/*"
+        #artifacts: "${{ env.BIN_PATH }}/*"
+        artifacts: "${{ env.FIRMWARE_PATH }}/*"
         
     - name: 发送[在线更新固件]至云端2
       continue-on-error: true
