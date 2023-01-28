@@ -3,7 +3,7 @@
 #
 
 
-name: 编译主程序
+name: 触发编译
 on:
   push:
     branches:
