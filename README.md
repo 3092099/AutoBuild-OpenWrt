@@ -1,1 +1,1 @@
-## `OpenWrt-GXNAS 云编译X64版本`
+## `OpenWrt-X64-GXNAS 内核版本6.1X 云编译`
