@@ -13,7 +13,7 @@ jobs:
     steps:
     
       - name: 删除releases，清理旧版本
-        uses: dev-drprasad/delete-older-releases@v0.2.0
+        uses: danshui-git/delete-older-releases@main
         with:
           repo: ${{ github.repository }}
           keep_latest: 0
